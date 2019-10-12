@@ -17,9 +17,19 @@ html(lang='en')
                 ul
                     li
                         a(href="/") Empleos
-                    li
-                        a(href="/login") Iniciar Sesion
-                    li
-                        a(href="/signup") Registrarse
+
+                    //- retorna el objeto user si existe un user logeado
+                    if auth.user  
+                        li
+                            a(href="/publicar-empleo") Mis empleos
+                        li
+                            a(href="/logout") Cerrar Sesion
+
+                    else
+                        li
+                            a(href="/login") Iniciar Sesion
+                        li
+                            a(href="/signup") Registrarse
+
         main.container
             block content

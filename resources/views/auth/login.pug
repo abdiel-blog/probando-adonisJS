@@ -1,0 +1,28 @@
+extends ../layout/main
+
+block title
+    | Inicia sesion
+
+block extracss
+    !=style('forms')
+
+block content
+    h1 Iniciar sesion
+    
+    .job-container
+        form(action=route('UserController.login') method="POST")
+            !=csrfField()
+
+            label(for="email") Correo
+            input(type="text" name="email" value=old('email', ''))
+            
+            if(hasErrorFor('email'))
+                span=getErrorFor('email')
+                
+            label(for="password") Contraseña
+            input(type="text" name="password" value=old('password', ''))
+            
+            if(hasErrorFor('password'))
+                span=getErrorFor('password')
+
+            button(type='submit') Enviar

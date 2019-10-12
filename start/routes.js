@@ -17,4 +17,15 @@
 const Route = use('Route')
 
 Route.get('/', 'EmpleoController.home')
-// Route.on('/').render('index');
+
+Route.on('/signup').render('auth/signup')
+Route.post('/signup', 'UserController.create').validator('CreateUser')
+
+Route.on('/login').render('auth/login')
+Route.post('/login', 'UserController.login').validator('LoginUser')
+
+Route.get('/logout', async ({auth, response})=>{
+    auth.logout()
+
+    return response.redirect('/')
+})
