@@ -1,0 +1,15 @@
+extends layout/main.pug
+
+block title
+    | Publica tu empleo
+
+block content
+    h1 Todos los empleos
+    
+    each empleo in empleos
+        .job-container
+            .blank
+            .job-info
+                h3
+                    a(href=empleo.link)=empleo.titulo
+                p=empleo.descripcion

@@ -12,7 +12,8 @@
 */
 const providers = [
   '@adonisjs/framework/providers/AppProvider',
-  '@adonisjs/framework/providers/ViewProvider',
+  // '@adonisjs/framework/providers/ViewProvider',  //edge template manager
+  'adonis-pug/providers/ViewProvider',
   '@adonisjs/lucid/providers/LucidProvider',
   '@adonisjs/bodyparser/providers/BodyParserProvider',
   '@adonisjs/cors/providers/CorsProvider',

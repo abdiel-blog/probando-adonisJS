@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title
+            block title 
+                | Default title
+
+        != style('style')
+
+        block extracss
+
+    body
+        header
+            a#logo(href="/") EmpleosXD
+            nav
+                ul
+                    li
+                        a(href="/") Empleos
+                    li
+                        a(href="/login") Iniciar Sesion
+                    li
+                        a(href="/signup") Registrarse
+        main.container
+            block content
